@@ -1,0 +1,176 @@
+[
+    {
+        "id": "TFIDF_Combined",
+        "clusters": {
+            "[0]": {
+                "toys_games-100.txt": 1
+            },
+            "[1]": {
+                "beauty-100.txt": 97,
+                "toys_games-100.txt": 96,
+                "pet_supplies-100.txt": 98
+            },
+            "[2]": {
+                "toys_games-100.txt": 1
+            },
+            "[3]": {
+                "beauty-100.txt": 1
+            },
+            "[4]": {
+                "toys_games-100.txt": 1
+            },
+            "[5]": {
+                "beauty-100.txt": 1
+            },
+            "[6]": {
+                "toys_games-100.txt": 1
+            },
+            "[7]": {
+                "pet_supplies-100.txt": 1
+            },
+            "[8]": {
+                "beauty-100.txt": 1
+            }
+        }
+    },
+    {
+        "id": "TFIDF_Keywords",
+        "clusters": {
+            "[0]": {
+                "beauty-100.txt": 12,
+                "pet_supplies-100.txt": 5,
+                "toys_games-100.txt": 1
+            },
+            "[1]": {
+                "pet_supplies-100.txt": 1
+            },
+            "[2]": {
+                "toys_games-100.txt": 1
+            },
+            "[3]": {
+                "beauty-100.txt": 1
+            },
+            "[4]": {
+                "beauty-100.txt": 1
+            },
+            "[5]": {
+                "toys_games-100.txt": 1
+            },
+            "[6]": {
+                "beauty-100.txt": 85,
+                "toys_games-100.txt": 96,
+                "pet_supplies-100.txt": 93
+            },
+            "[7]": {
+                "beauty-100.txt": 1
+            },
+            "[8]": {
+                "toys_games-100.txt": 1
+            }
+        }
+    },
+    {
+        "id": "TFIDF_KeywordsFirst",
+        "clusters": {
+            "[0]": {
+                "pet_supplies-100.txt": 1
+            },
+            "[1]": {
+                "beauty-100.txt": 97,
+                "toys_games-100.txt": 97,
+                "pet_supplies-100.txt": 97
+            },
+            "[2]": {
+                "toys_games-100.txt": 1
+            },
+            "[3]": {
+                "pet_supplies-100.txt": 1
+            },
+            "[4]": {
+                "toys_games-100.txt": 1
+            },
+            "[5]": {
+                "beauty-100.txt": 1
+            },
+            "[6]": {
+                "beauty-100.txt": 1
+            },
+            "[7]": {
+                "toys_games-100.txt": 1
+            },
+            "[8]": {
+                "beauty-100.txt": 1
+            }
+        }
+    },
+    {
+        "id": "TFIDF_WordNgram",
+        "clusters": {
+            "[0]": {
+                "toys_games-100.txt": 1
+            },
+            "[1]": {
+                "toys_games-100.txt": 1
+            },
+            "[2]": {
+                "toys_games-100.txt": 72,
+                "pet_supplies-100.txt": 89,
+                "beauty-100.txt": 70
+            },
+            "[3]": {
+                "toys_games-100.txt": 1
+            },
+            "[4]": {
+                "beauty-100.txt": 28,
+                "toys_games-100.txt": 23,
+                "pet_supplies-100.txt": 10
+            },
+            "[5]": {
+                "beauty-100.txt": 1
+            },
+            "[6]": {
+                "toys_games-100.txt": 1
+            },
+            "[7]": {
+                "beauty-100.txt": 1
+            },
+            "[8]": {
+                "toys_games-100.txt": 1
+            }
+        }
+    },
+    {
+        "id": "WikipediaTitles",
+        "clusters": {
+            "[0]": {
+                "pet_supplies-100.txt": 1
+            },
+            "[1]": {
+                "pet_supplies-100.txt": 98,
+                "beauty-100.txt": 99,
+                "toys_games-100.txt": 95
+            },
+            "[2]": {
+                "toys_games-100.txt": 1
+            },
+            "[3]": {
+                "pet_supplies-100.txt": 1
+            },
+            "[4]": {
+                "toys_games-100.txt": 1
+            },
+            "[5]": {
+                "toys_games-100.txt": 1
+            },
+            "[6]": {
+                "toys_games-100.txt": 1
+            },
+            "[7]": {
+                "toys_games-100.txt": 1
+            },
+            "[8]": {
+                "beauty-100.txt": 1
+            }
+        }
+    }
+]
