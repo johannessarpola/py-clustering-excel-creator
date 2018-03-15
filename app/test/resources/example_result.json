@@ -1,0 +1,387 @@
+[
+    {
+        "id": "TFIDF_Combined",
+        "clusters": [
+            {
+                "id": "[0]",
+                "categories": {
+                    "pet_supplies-100.txt": 1,
+                    "toys_games-100.txt": 0,
+                    "beauty-100.txt": 0
+                }
+            },
+            {
+                "id": "[1]",
+                "categories": {
+                    "beauty-100.txt": 1,
+                    "toys_games-100.txt": 0,
+                    "pet_supplies-100.txt": 0
+                }
+            },
+            {
+                "id": "[2]",
+                "categories": {
+                    "beauty-100.txt": 99,
+                    "toys_games-100.txt": 95,
+                    "pet_supplies-100.txt": 97
+                }
+            },
+            {
+                "id": "[3]",
+                "categories": {
+                    "pet_supplies-100.txt": 1,
+                    "toys_games-100.txt": 0,
+                    "beauty-100.txt": 0
+                }
+            },
+            {
+                "id": "[4]",
+                "categories": {
+                    "toys_games-100.txt": 1,
+                    "pet_supplies-100.txt": 0,
+                    "beauty-100.txt": 0
+                }
+            },
+            {
+                "id": "[5]",
+                "categories": {
+                    "toys_games-100.txt": 1,
+                    "pet_supplies-100.txt": 0,
+                    "beauty-100.txt": 0
+                }
+            },
+            {
+                "id": "[6]",
+                "categories": {
+                    "toys_games-100.txt": 1,
+                    "pet_supplies-100.txt": 0,
+                    "beauty-100.txt": 0
+                }
+            },
+            {
+                "id": "[7]",
+                "categories": {
+                    "toys_games-100.txt": 1,
+                    "pet_supplies-100.txt": 0,
+                    "beauty-100.txt": 0
+                }
+            },
+            {
+                "id": "[8]",
+                "categories": {
+                    "toys_games-100.txt": 1,
+                    "pet_supplies-100.txt": 0,
+                    "beauty-100.txt": 0
+                }
+            }
+        ]
+    },
+    {
+        "id": "TFIDF_Keywords",
+        "clusters": [
+            {
+                "id": "[0]",
+                "categories": {
+                    "beauty-100.txt": 96,
+                    "toys_games-100.txt": 98,
+                    "pet_supplies-100.txt": 97
+                }
+            },
+            {
+                "id": "[1]",
+                "categories": {
+                    "toys_games-100.txt": 1,
+                    "pet_supplies-100.txt": 0,
+                    "beauty-100.txt": 0
+                }
+            },
+            {
+                "id": "[2]",
+                "categories": {
+                    "pet_supplies-100.txt": 1,
+                    "beauty-100.txt": 0,
+                    "toys_games-100.txt": 0
+                }
+            },
+            {
+                "id": "[3]",
+                "categories": {
+                    "beauty-100.txt": 1,
+                    "pet_supplies-100.txt": 0,
+                    "toys_games-100.txt": 0
+                }
+            },
+            {
+                "id": "[4]",
+                "categories": {
+                    "toys_games-100.txt": 1,
+                    "pet_supplies-100.txt": 0,
+                    "beauty-100.txt": 0
+                }
+            },
+            {
+                "id": "[5]",
+                "categories": {
+                    "beauty-100.txt": 1,
+                    "pet_supplies-100.txt": 0,
+                    "toys_games-100.txt": 0
+                }
+            },
+            {
+                "id": "[6]",
+                "categories": {
+                    "pet_supplies-100.txt": 1,
+                    "beauty-100.txt": 0,
+                    "toys_games-100.txt": 0
+                }
+            },
+            {
+                "id": "[7]",
+                "categories": {
+                    "beauty-100.txt": 1,
+                    "pet_supplies-100.txt": 0,
+                    "toys_games-100.txt": 0
+                }
+            },
+            {
+                "id": "[8]",
+                "categories": {
+                    "beauty-100.txt": 1,
+                    "pet_supplies-100.txt": 0,
+                    "toys_games-100.txt": 0
+                }
+            }
+        ]
+    },
+    {
+        "id": "TFIDF_KeywordsFirst",
+        "clusters": [
+            {
+                "id": "[0]",
+                "categories": {
+                    "beauty-100.txt": 98,
+                    "toys_games-100.txt": 94,
+                    "pet_supplies-100.txt": 99
+                }
+            },
+            {
+                "id": "[1]",
+                "categories": {
+                    "toys_games-100.txt": 1,
+                    "pet_supplies-100.txt": 0,
+                    "beauty-100.txt": 0
+                }
+            },
+            {
+                "id": "[2]",
+                "categories": {
+                    "toys_games-100.txt": 1,
+                    "pet_supplies-100.txt": 0,
+                    "beauty-100.txt": 0
+                }
+            },
+            {
+                "id": "[3]",
+                "categories": {
+                    "beauty-100.txt": 1,
+                    "pet_supplies-100.txt": 0,
+                    "toys_games-100.txt": 0
+                }
+            },
+            {
+                "id": "[4]",
+                "categories": {
+                    "toys_games-100.txt": 1,
+                    "pet_supplies-100.txt": 0,
+                    "beauty-100.txt": 0
+                }
+            },
+            {
+                "id": "[5]",
+                "categories": {
+                    "toys_games-100.txt": 1,
+                    "pet_supplies-100.txt": 0,
+                    "beauty-100.txt": 0
+                }
+            },
+            {
+                "id": "[6]",
+                "categories": {
+                    "toys_games-100.txt": 1,
+                    "pet_supplies-100.txt": 0,
+                    "beauty-100.txt": 0
+                }
+            },
+            {
+                "id": "[7]",
+                "categories": {
+                    "beauty-100.txt": 1,
+                    "pet_supplies-100.txt": 0,
+                    "toys_games-100.txt": 0
+                }
+            },
+            {
+                "id": "[8]",
+                "categories": {
+                    "toys_games-100.txt": 1,
+                    "pet_supplies-100.txt": 0,
+                    "beauty-100.txt": 0
+                }
+            }
+        ]
+    },
+    {
+        "id": "TFIDF_WordNgram",
+        "clusters": [
+            {
+                "id": "[0]",
+                "categories": {
+                    "pet_supplies-100.txt": 1,
+                    "beauty-100.txt": 0,
+                    "toys_games-100.txt": 0
+                }
+            },
+            {
+                "id": "[1]",
+                "categories": {
+                    "beauty-100.txt": 96,
+                    "toys_games-100.txt": 98,
+                    "pet_supplies-100.txt": 97
+                }
+            },
+            {
+                "id": "[2]",
+                "categories": {
+                    "beauty-100.txt": 1,
+                    "pet_supplies-100.txt": 0,
+                    "toys_games-100.txt": 0
+                }
+            },
+            {
+                "id": "[3]",
+                "categories": {
+                    "toys_games-100.txt": 1,
+                    "beauty-100.txt": 0,
+                    "pet_supplies-100.txt": 0
+                }
+            },
+            {
+                "id": "[4]",
+                "categories": {
+                    "beauty-100.txt": 1,
+                    "pet_supplies-100.txt": 0,
+                    "toys_games-100.txt": 0
+                }
+            },
+            {
+                "id": "[5]",
+                "categories": {
+                    "toys_games-100.txt": 1,
+                    "beauty-100.txt": 0,
+                    "pet_supplies-100.txt": 0
+                }
+            },
+            {
+                "id": "[6]",
+                "categories": {
+                    "pet_supplies-100.txt": 1,
+                    "beauty-100.txt": 0,
+                    "toys_games-100.txt": 0
+                }
+            },
+            {
+                "id": "[7]",
+                "categories": {
+                    "beauty-100.txt": 1,
+                    "pet_supplies-100.txt": 0,
+                    "toys_games-100.txt": 0
+                }
+            },
+            {
+                "id": "[8]",
+                "categories": {
+                    "beauty-100.txt": 1,
+                    "pet_supplies-100.txt": 0,
+                    "toys_games-100.txt": 0
+                }
+            }
+        ]
+    },
+    {
+        "id": "WikipediaTitles",
+        "clusters": [
+            {
+                "id": "[0]",
+                "categories": {
+                    "beauty-100.txt": 1,
+                    "toys_games-100.txt": 0,
+                    "pet_supplies-100.txt": 0
+                }
+            },
+            {
+                "id": "[1]",
+                "categories": {
+                    "beauty-100.txt": 1,
+                    "toys_games-100.txt": 0,
+                    "pet_supplies-100.txt": 0
+                }
+            },
+            {
+                "id": "[2]",
+                "categories": {
+                    "pet_supplies-100.txt": 99,
+                    "beauty-100.txt": 97,
+                    "toys_games-100.txt": 96
+                }
+            },
+            {
+                "id": "[3]",
+                "categories": {
+                    "toys_games-100.txt": 1,
+                    "pet_supplies-100.txt": 0,
+                    "beauty-100.txt": 0
+                }
+            },
+            {
+                "id": "[4]",
+                "categories": {
+                    "beauty-100.txt": 1,
+                    "toys_games-100.txt": 0,
+                    "pet_supplies-100.txt": 0
+                }
+            },
+            {
+                "id": "[5]",
+                "categories": {
+                    "pet_supplies-100.txt": 1,
+                    "toys_games-100.txt": 0,
+                    "beauty-100.txt": 0
+                }
+            },
+            {
+                "id": "[6]",
+                "categories": {
+                    "toys_games-100.txt": 1,
+                    "pet_supplies-100.txt": 0,
+                    "beauty-100.txt": 0
+                }
+            },
+            {
+                "id": "[7]",
+                "categories": {
+                    "toys_games-100.txt": 1,
+                    "pet_supplies-100.txt": 0,
+                    "beauty-100.txt": 0
+                }
+            },
+            {
+                "id": "[8]",
+                "categories": {
+                    "toys_games-100.txt": 1,
+                    "pet_supplies-100.txt": 0,
+                    "beauty-100.txt": 0
+                }
+            }
+        ]
+    }
+]

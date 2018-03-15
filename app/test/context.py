@@ -4,10 +4,6 @@ import json
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from app import models
-from app import adapter
-from app import input_output
-
 
 def relative_resource(path):
     dir = os.path.dirname(__file__)
