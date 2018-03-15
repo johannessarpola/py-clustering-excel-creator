@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Identified(object):
     id = ''
 
@@ -10,17 +13,17 @@ class Identified(object):
         return d
 
 
-class InputClustering(Identified):
-    clusters = []
-
-    def __init__(self, id, clusters):
-        super().__init__(id)
-        self.clusters = clusters
-
-
 class InputCluster(Identified):
     categories = {}
 
     def __init__(self, id, categories):
         super().__init__(id)
         self.categories = categories
+
+
+class InputClustering(Identified):
+    clusters = []
+
+    def __init__(self, id, clusters):
+        super().__init__(id)
+        self.clusters = clusters

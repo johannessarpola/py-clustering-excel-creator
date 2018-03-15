@@ -11,10 +11,11 @@ parser.add_argument('-o', "--output", help="where the clustering result will be 
 args = parser.parse_args()
 
 if __name__ == '__main__':
-    docs_folder = args.input_folder
-    hashes_folder = args.hash_folder
-    num_clusters = int(args.num_clusters)
-    output_file = args.output
+    #docs_folder = args.input_folder
+    #hashes_folder = args.hash_folder
+    #num_clusters = int(args.num_clusters)
+    #output_file = args.output
 
-    app.main(docs_folder, hashes_folder, num_clusters, output_file)
+    #app.main(docs_folder, hashes_folder, num_clusters, output_file)
+    app.main()
     print("done!")

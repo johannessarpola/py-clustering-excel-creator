@@ -6,7 +6,7 @@ from app.src import adapter
 class ModelTest(unittest.TestCase):
     def test_clustering_result(self):
         json = relative_resource_json('example_result.json')
-        mr = adapter.multiple_results_from_json(json)
+        mr = adapter.multiple_results_from_json([json])[0] # only single file
 
         actIds = ['TFIDF_Combined',
                   'TFIDF_Keywords',
@@ -24,7 +24,7 @@ class ModelTest(unittest.TestCase):
 
     def test_cluster_categories(self):
         json = relative_resource_json('example_result.json')
-        mr = adapter.multiple_results_from_json(json)
+        mr = adapter.multiple_results_from_json([json])[0] # only single file
 
         all_clusters = list(map(lambda cr: cr.clusters, mr))
         ids = set()
