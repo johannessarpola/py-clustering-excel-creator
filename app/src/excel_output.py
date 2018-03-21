@@ -1,10 +1,11 @@
-from app.src import models
-from openpyxl import Workbook, load_workbook
-from openpyxl.worksheet import Worksheet
-from datetime import datetime
 from typing import List
-from openpyxl.styles import Font
-from copy import copy
+
+from openpyxl import Workbook
+from openpyxl.worksheet import Worksheet
+
+from app.src import excel_formatting_utils as formatting
+from app.src.excel_formatting_utils import Side
+from app.src import models
 
 
 def extract_category_titles_from_cluster(cl):
@@ -25,7 +26,7 @@ class FormattingData(object):
         self.padding = padding
 
 
-def multiple_results_to_excels(base_fd: FormattingData, results):
+def multiple_results_to_excels(base_fd: FormattingData, results, filename=None):
     """
 
     :param base_fd: FormattingData
@@ -38,18 +39,11 @@ def multiple_results_to_excels(base_fd: FormattingData, results):
     for result in results:
         fd = FormattingData(col_cursor, base_fd.start_row, base_fd.padding)
         (cc, rc) = add_results_to_excel(fd, result, ws)
-        col_cursor += cc  # This just increases to column by 4 for each iteration
-    wb.save("filename.xlsx")
+        col_cursor = cc  # This just increases to column by 4 for each iteration
+    if filename is not None:
+        return wb.save(f"{filename}.xlsx")
+    return wb.save(f"results.xlsx")
 
-
-def bold_cell(cell):
-    f: Font = copy(cell.font)
-    f.bold = True
-    cell.font = f
-
-
-def set_width(ws, col, width):
-    ws.column_dimensions[col].width = width
 
 
 def add_results_to_excel(fd: FormattingData,
@@ -81,20 +75,24 @@ def add_results_to_excel(fd: FormattingData,
         for cluster in cl.clusters:
             k = 0
             if header_pass:
+                # Write cluster titlte
                 title_cell = ws.cell(row=row_cursor, column=col_cursor, value=cluster_id)
-                bold_cell(title_cell)
+                formatting.bold_cell(title_cell)
                 if title_column is None:
                     title_column = title_cell.column
                 col_cursor += 1
+                # Write categories
                 for cat_title in category_titles:
                     cat_cell = ws.cell(row=row_cursor, column=col_cursor + k, value=cat_title)
-                    bold_cell(cat_cell)
+                    formatting.bold_cell(cat_cell)
                     if len(category_columns) <= len(category_titles):
                         category_columns.append(cat_cell.column)
                     k += 1
+                formatting.add_thin_border_to_row(ws, row_cursor, Side.BOTTOM)
                 row_cursor += 1
 
             k = 0
+            # Write results per category
             for cat in category_titles:
                 cat_count = cluster.categories[cat]
                 ws.cell(row=row_cursor, column=col_cursor + k, value=cat_count)
@@ -106,8 +104,10 @@ def add_results_to_excel(fd: FormattingData,
     col_cursor += len(category_titles)
 
     # Set some basic formatting
-    set_width(ws, title_column, 20)
+    formatting.set_column_width(ws, title_column, 20)
+    formatting.add_thin_border_to_column(ws, title_column, Side.RIGHT)
     for c in category_columns:
-        set_width(ws, c, 15)
-
+        formatting.set_column_width(ws, c, 15)
+        if c == c[-1:]:
+            formatting.add_thin_border_to_column(ws, title_column, Side.RIGHT)
     return col_cursor, row_cursor
