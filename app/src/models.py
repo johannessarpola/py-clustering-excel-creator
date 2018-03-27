@@ -23,7 +23,9 @@ class InputCluster(Identified):
 
 class InputClustering(Identified):
     clusters = []
+    silhouette = 0.0
 
-    def __init__(self, id, clusters):
+    def __init__(self, id, clusters, silhouette):
         super().__init__(id)
         self.clusters = clusters
+        self.silhouette = silhouette

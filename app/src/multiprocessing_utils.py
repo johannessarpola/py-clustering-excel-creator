@@ -1,6 +1,7 @@
 from collections import defaultdict
 import multiprocessing as mp
 
+
 def join_all(processes):
     for p in processes:
         p.join()
@@ -12,6 +13,7 @@ def gather_to_list(queue, processes):
         process_result = queue.get()
         l.append(process_result)
     return l
+
 
 def gather_to_list_and_join(queue, processes):
     l = []
@@ -28,6 +30,7 @@ def gather_to_dict_from_tuples(queue, processes):
         process_result = queue.get()
         d[process_result[0]] = process_result[1]
     return d
+
 
 def gather_to_dict_from_tuples_and_join(queue, processes):
     d = defaultdict(dict)

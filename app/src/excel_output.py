@@ -41,7 +41,7 @@ def multiple_results_to_excels(base_fd: FormattingData, results, filename=None):
         (cc, rc) = add_results_to_excel(fd, result, ws)
         col_cursor = cc  # This just increases to column by 4 for each iteration
     if filename is not None:
-        return wb.save(f"{filename}.xlsx")
+        return wb.save(f"{filename}")
     return wb.save(f"results.xlsx")
 
 
@@ -80,6 +80,7 @@ def add_results_to_excel(fd: FormattingData,
                 formatting.bold_cell(title_cell)
                 if title_column is None:
                     title_column = title_cell.column
+                ws.cell(row=(row_cursor + 1), column=col_cursor, value=cl.silhouette)
                 col_cursor += 1
                 # Write categories
                 for cat_title in category_titles:

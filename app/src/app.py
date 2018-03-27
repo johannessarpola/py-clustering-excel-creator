@@ -11,11 +11,11 @@ def relative_resource(path):
     actual_path = os.path.join(res, path)
     return actual_path
 
-def main():
-    jsons = io.get_jsons_from_folder('.data/')
+def main(input, output_file):
+    jsons = io.get_jsons_from_folder(input)
     all_crs = adapter.multiple_results_from_json(jsons)
     fd = out.FormattingData(1, 3, 1)
-    out.multiple_results_to_excels(fd, all_crs)
+    out.multiple_results_to_excels(fd, all_crs, output_file)
     print("app")
 
 
