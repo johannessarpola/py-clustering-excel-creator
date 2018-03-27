@@ -1,234 +1,34 @@
 [
     {
-        "id": "TFIDF_Combined",
+        "id": "WikipediaTitles",
         "clusters": [
             {
                 "id": "[0]",
                 "categories": {
-                    "pet_supplies-100.txt": 1,
-                    "toys_games-100.txt": 0,
-                    "beauty-100.txt": 0
+                    "Grocery_and_Gourmet_Food_5-15k.txt": 1,
+                    "Beauty_5-15K.txt": 0,
+                    "Pet_Supplies_5-15k.txt": 0
                 }
             },
             {
                 "id": "[1]",
                 "categories": {
-                    "beauty-100.txt": 1,
-                    "toys_games-100.txt": 0,
-                    "pet_supplies-100.txt": 0
+                    "Pet_Supplies_5-15k.txt": 3479,
+                    "Grocery_and_Gourmet_Food_5-15k.txt": 4865,
+                    "Beauty_5-15K.txt": 4105
                 }
             },
             {
                 "id": "[2]",
                 "categories": {
-                    "beauty-100.txt": 99,
-                    "toys_games-100.txt": 95,
-                    "pet_supplies-100.txt": 97
-                }
-            },
-            {
-                "id": "[3]",
-                "categories": {
-                    "pet_supplies-100.txt": 1,
-                    "toys_games-100.txt": 0,
-                    "beauty-100.txt": 0
-                }
-            },
-            {
-                "id": "[4]",
-                "categories": {
-                    "toys_games-100.txt": 1,
-                    "pet_supplies-100.txt": 0,
-                    "beauty-100.txt": 0
-                }
-            },
-            {
-                "id": "[5]",
-                "categories": {
-                    "toys_games-100.txt": 1,
-                    "pet_supplies-100.txt": 0,
-                    "beauty-100.txt": 0
-                }
-            },
-            {
-                "id": "[6]",
-                "categories": {
-                    "toys_games-100.txt": 1,
-                    "pet_supplies-100.txt": 0,
-                    "beauty-100.txt": 0
-                }
-            },
-            {
-                "id": "[7]",
-                "categories": {
-                    "toys_games-100.txt": 1,
-                    "pet_supplies-100.txt": 0,
-                    "beauty-100.txt": 0
-                }
-            },
-            {
-                "id": "[8]",
-                "categories": {
-                    "toys_games-100.txt": 1,
-                    "pet_supplies-100.txt": 0,
-                    "beauty-100.txt": 0
+                    "Beauty_5-15K.txt": 10879,
+                    "Grocery_and_Gourmet_Food_5-15k.txt": 10119,
+                    "Pet_Supplies_5-15k.txt": 11491
                 }
             }
-        ]
-    },
-    {
-        "id": "TFIDF_Keywords",
-        "clusters": [
-            {
-                "id": "[0]",
-                "categories": {
-                    "beauty-100.txt": 96,
-                    "toys_games-100.txt": 98,
-                    "pet_supplies-100.txt": 97
-                }
-            },
-            {
-                "id": "[1]",
-                "categories": {
-                    "toys_games-100.txt": 1,
-                    "pet_supplies-100.txt": 0,
-                    "beauty-100.txt": 0
-                }
-            },
-            {
-                "id": "[2]",
-                "categories": {
-                    "pet_supplies-100.txt": 1,
-                    "beauty-100.txt": 0,
-                    "toys_games-100.txt": 0
-                }
-            },
-            {
-                "id": "[3]",
-                "categories": {
-                    "beauty-100.txt": 1,
-                    "pet_supplies-100.txt": 0,
-                    "toys_games-100.txt": 0
-                }
-            },
-            {
-                "id": "[4]",
-                "categories": {
-                    "toys_games-100.txt": 1,
-                    "pet_supplies-100.txt": 0,
-                    "beauty-100.txt": 0
-                }
-            },
-            {
-                "id": "[5]",
-                "categories": {
-                    "beauty-100.txt": 1,
-                    "pet_supplies-100.txt": 0,
-                    "toys_games-100.txt": 0
-                }
-            },
-            {
-                "id": "[6]",
-                "categories": {
-                    "pet_supplies-100.txt": 1,
-                    "beauty-100.txt": 0,
-                    "toys_games-100.txt": 0
-                }
-            },
-            {
-                "id": "[7]",
-                "categories": {
-                    "beauty-100.txt": 1,
-                    "pet_supplies-100.txt": 0,
-                    "toys_games-100.txt": 0
-                }
-            },
-            {
-                "id": "[8]",
-                "categories": {
-                    "beauty-100.txt": 1,
-                    "pet_supplies-100.txt": 0,
-                    "toys_games-100.txt": 0
-                }
-            }
-        ]
-    },
-    {
-        "id": "TFIDF_KeywordsFirst",
-        "clusters": [
-            {
-                "id": "[0]",
-                "categories": {
-                    "beauty-100.txt": 98,
-                    "toys_games-100.txt": 94,
-                    "pet_supplies-100.txt": 99
-                }
-            },
-            {
-                "id": "[1]",
-                "categories": {
-                    "toys_games-100.txt": 1,
-                    "pet_supplies-100.txt": 0,
-                    "beauty-100.txt": 0
-                }
-            },
-            {
-                "id": "[2]",
-                "categories": {
-                    "toys_games-100.txt": 1,
-                    "pet_supplies-100.txt": 0,
-                    "beauty-100.txt": 0
-                }
-            },
-            {
-                "id": "[3]",
-                "categories": {
-                    "beauty-100.txt": 1,
-                    "pet_supplies-100.txt": 0,
-                    "toys_games-100.txt": 0
-                }
-            },
-            {
-                "id": "[4]",
-                "categories": {
-                    "toys_games-100.txt": 1,
-                    "pet_supplies-100.txt": 0,
-                    "beauty-100.txt": 0
-                }
-            },
-            {
-                "id": "[5]",
-                "categories": {
-                    "toys_games-100.txt": 1,
-                    "pet_supplies-100.txt": 0,
-                    "beauty-100.txt": 0
-                }
-            },
-            {
-                "id": "[6]",
-                "categories": {
-                    "toys_games-100.txt": 1,
-                    "pet_supplies-100.txt": 0,
-                    "beauty-100.txt": 0
-                }
-            },
-            {
-                "id": "[7]",
-                "categories": {
-                    "beauty-100.txt": 1,
-                    "pet_supplies-100.txt": 0,
-                    "toys_games-100.txt": 0
-                }
-            },
-            {
-                "id": "[8]",
-                "categories": {
-                    "toys_games-100.txt": 1,
-                    "pet_supplies-100.txt": 0,
-                    "beauty-100.txt": 0
-                }
-            }
-        ]
+        ],
+        "silhouette": 0.059055247745134265,
+        "path_to_model": ""
     },
     {
         "id": "TFIDF_WordNgram",
@@ -236,152 +36,122 @@
             {
                 "id": "[0]",
                 "categories": {
-                    "pet_supplies-100.txt": 1,
-                    "beauty-100.txt": 0,
-                    "toys_games-100.txt": 0
+                    "Pet_Supplies_5-15k.txt": 1839,
+                    "Grocery_and_Gourmet_Food_5-15k.txt": 2102,
+                    "Beauty_5-15K.txt": 2190
                 }
             },
             {
                 "id": "[1]",
                 "categories": {
-                    "beauty-100.txt": 96,
-                    "toys_games-100.txt": 98,
-                    "pet_supplies-100.txt": 97
+                    "Beauty_5-15K.txt": 10809,
+                    "Grocery_and_Gourmet_Food_5-15k.txt": 10103,
+                    "Pet_Supplies_5-15k.txt": 11367
                 }
             },
             {
                 "id": "[2]",
                 "categories": {
-                    "beauty-100.txt": 1,
-                    "pet_supplies-100.txt": 0,
-                    "toys_games-100.txt": 0
-                }
-            },
-            {
-                "id": "[3]",
-                "categories": {
-                    "toys_games-100.txt": 1,
-                    "beauty-100.txt": 0,
-                    "pet_supplies-100.txt": 0
-                }
-            },
-            {
-                "id": "[4]",
-                "categories": {
-                    "beauty-100.txt": 1,
-                    "pet_supplies-100.txt": 0,
-                    "toys_games-100.txt": 0
-                }
-            },
-            {
-                "id": "[5]",
-                "categories": {
-                    "toys_games-100.txt": 1,
-                    "beauty-100.txt": 0,
-                    "pet_supplies-100.txt": 0
-                }
-            },
-            {
-                "id": "[6]",
-                "categories": {
-                    "pet_supplies-100.txt": 1,
-                    "beauty-100.txt": 0,
-                    "toys_games-100.txt": 0
-                }
-            },
-            {
-                "id": "[7]",
-                "categories": {
-                    "beauty-100.txt": 1,
-                    "pet_supplies-100.txt": 0,
-                    "toys_games-100.txt": 0
-                }
-            },
-            {
-                "id": "[8]",
-                "categories": {
-                    "beauty-100.txt": 1,
-                    "pet_supplies-100.txt": 0,
-                    "toys_games-100.txt": 0
+                    "Pet_Supplies_5-15k.txt": 1764,
+                    "Grocery_and_Gourmet_Food_5-15k.txt": 2780,
+                    "Beauty_5-15K.txt": 1984
                 }
             }
-        ]
+        ],
+        "silhouette": 0.02011827517618766,
+        "path_to_model": ""
     },
     {
-        "id": "WikipediaTitles",
+        "id": "TFIDF_Combined",
         "clusters": [
             {
                 "id": "[0]",
                 "categories": {
-                    "beauty-100.txt": 1,
-                    "toys_games-100.txt": 0,
-                    "pet_supplies-100.txt": 0
+                    "Pet_Supplies_5-15k.txt": 2,
+                    "Beauty_5-15K.txt": 1,
+                    "Grocery_and_Gourmet_Food_5-15k.txt": 0
                 }
             },
             {
                 "id": "[1]",
                 "categories": {
-                    "beauty-100.txt": 1,
-                    "toys_games-100.txt": 0,
-                    "pet_supplies-100.txt": 0
+                    "Pet_Supplies_5-15k.txt": 2043,
+                    "Grocery_and_Gourmet_Food_5-15k.txt": 3219,
+                    "Beauty_5-15K.txt": 2448
                 }
             },
             {
                 "id": "[2]",
                 "categories": {
-                    "pet_supplies-100.txt": 99,
-                    "beauty-100.txt": 97,
-                    "toys_games-100.txt": 96
-                }
-            },
-            {
-                "id": "[3]",
-                "categories": {
-                    "toys_games-100.txt": 1,
-                    "pet_supplies-100.txt": 0,
-                    "beauty-100.txt": 0
-                }
-            },
-            {
-                "id": "[4]",
-                "categories": {
-                    "beauty-100.txt": 1,
-                    "toys_games-100.txt": 0,
-                    "pet_supplies-100.txt": 0
-                }
-            },
-            {
-                "id": "[5]",
-                "categories": {
-                    "pet_supplies-100.txt": 1,
-                    "toys_games-100.txt": 0,
-                    "beauty-100.txt": 0
-                }
-            },
-            {
-                "id": "[6]",
-                "categories": {
-                    "toys_games-100.txt": 1,
-                    "pet_supplies-100.txt": 0,
-                    "beauty-100.txt": 0
-                }
-            },
-            {
-                "id": "[7]",
-                "categories": {
-                    "toys_games-100.txt": 1,
-                    "pet_supplies-100.txt": 0,
-                    "beauty-100.txt": 0
-                }
-            },
-            {
-                "id": "[8]",
-                "categories": {
-                    "toys_games-100.txt": 1,
-                    "pet_supplies-100.txt": 0,
-                    "beauty-100.txt": 0
+                    "Beauty_5-15K.txt": 12534,
+                    "Grocery_and_Gourmet_Food_5-15k.txt": 11766,
+                    "Pet_Supplies_5-15k.txt": 12925
                 }
             }
-        ]
+        ],
+        "silhouette": 0.045346635353143566,
+        "path_to_model": ""
+    },
+    {
+        "id": "TFIDF_KeywordsFirst",
+        "clusters": [
+            {
+                "id": "[0]",
+                "categories": {
+                    "Pet_Supplies_5-15k.txt": 3033,
+                    "Grocery_and_Gourmet_Food_5-15k.txt": 3981,
+                    "Beauty_5-15K.txt": 4153
+                }
+            },
+            {
+                "id": "[1]",
+                "categories": {
+                    "Grocery_and_Gourmet_Food_5-15k.txt": 1,
+                    "Beauty_5-15K.txt": 0,
+                    "Pet_Supplies_5-15k.txt": 0
+                }
+            },
+            {
+                "id": "[2]",
+                "categories": {
+                    "Beauty_5-15K.txt": 10830,
+                    "Grocery_and_Gourmet_Food_5-15k.txt": 11003,
+                    "Pet_Supplies_5-15k.txt": 11937
+                }
+            }
+        ],
+        "silhouette": 0.10451790329253974,
+        "path_to_model": ""
+    },
+    {
+        "id": "TFIDF_Keywords",
+        "clusters": [
+            {
+                "id": "[0]",
+                "categories": {
+                    "Pet_Supplies_5-15k.txt": 2069,
+                    "Grocery_and_Gourmet_Food_5-15k.txt": 2354,
+                    "Beauty_5-15K.txt": 2655
+                }
+            },
+            {
+                "id": "[1]",
+                "categories": {
+                    "Pet_Supplies_5-15k.txt": 1855,
+                    "Grocery_and_Gourmet_Food_5-15k.txt": 2954,
+                    "Beauty_5-15K.txt": 2061
+                }
+            },
+            {
+                "id": "[2]",
+                "categories": {
+                    "Beauty_5-15K.txt": 10267,
+                    "Grocery_and_Gourmet_Food_5-15k.txt": 9677,
+                    "Pet_Supplies_5-15k.txt": 11046
+                }
+            }
+        ],
+        "silhouette": 0.011225315534191267,
+        "path_to_model": ""
     }
 ]

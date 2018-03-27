@@ -17,10 +17,10 @@ class ModelTest(unittest.TestCase):
         ids = list(map(lambda cr: cr.id, mr))
         cls = list(map(lambda cr: cr.clusters, mr))
 
-        self.assertSequenceEqual(actIds, ids)
+        self.assertCountEqual(actIds, ids)
 
         for c in cls:
-            self.assertEqual(9, len(c))
+            self.assertEqual(3, len(c))
 
     def test_cluster_categories(self):
         json = relative_resource_json('example_result.json')
@@ -37,5 +37,5 @@ class ModelTest(unittest.TestCase):
                 self.assertIsNotNone(c.id)
                 self.assertIsNotNone(c.categories)
 
-        self.assertEqual(9, len(ids))
+        self.assertEqual(3, len(ids))
         self.assertEqual(3, len(cats))
