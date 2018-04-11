@@ -24,5 +24,6 @@ def multiple_results_from_json(json) -> List[models.InputClustering]:
     all_crs = []
     for res_obj in json:
         o = list(map(lambda obj: json_to_clustering_result(obj), res_obj))
+        o.sort(key=lambda x: x.id)
         all_crs.append(o)
     return all_crs
