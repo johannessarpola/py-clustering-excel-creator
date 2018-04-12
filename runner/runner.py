@@ -1,5 +1,6 @@
-from app.src import app
 import argparse
+
+from app.src import app
 
 parser = argparse.ArgumentParser()
 
