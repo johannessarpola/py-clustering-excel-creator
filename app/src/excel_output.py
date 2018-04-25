@@ -37,6 +37,7 @@ def multiple_results_to_excels(base_fd: FormattingData, results, filename=None):
     """
     wb = Workbook()
     ws = wb.create_sheet("Result", 0)
+    calculate_entropy_for_cluster(results)
     cluster_averages = get_cluster_averages(results)
     col_cursor = base_fd.start_column
     len_results = len(results)
@@ -58,8 +59,8 @@ def multiple_results_to_excels(base_fd: FormattingData, results, filename=None):
 
 def get_cluster_averages(results: List[List[models.InputClustering]]):
     cluster_averages = {}
-    avg_sil_f, avg_org_f, avg_pur_f, avg_runt_f = \
-        "avg. silhouette", "avg. org. silhouette (sample)", "avg. purity score", "avg. running time (ms)"
+    avg_sil_f, avg_org_f, avg_pur_f, avg_ent_f, avg_runt_f = \
+        "avg. silhouette", "avg. org. silhouette (sample)", "avg. purity score", "avg. entropy", "avg. running time (ms)"
     for result in results:
         for cls in result:
             if cls.id not in cluster_averages:
@@ -67,6 +68,7 @@ def get_cluster_averages(results: List[List[models.InputClustering]]):
                     avg_sil_f: cls.silhouette,
                     avg_org_f: cls.original_silhouette,
                     avg_pur_f: cls.purity_score,
+                    avg_ent_f: cls.entropy,
                     avg_runt_f: cls.running_time_ms
                 }
             else:
@@ -76,10 +78,33 @@ def get_cluster_averages(results: List[List[models.InputClustering]]):
                     (cluster_averages[cls.id][avg_org_f] + cls.original_silhouette) / 2
                 cluster_averages[cls.id][avg_pur_f] = \
                     (cluster_averages[cls.id][avg_pur_f] + cls.purity_score) / 2
+                cluster_averages[cls.id][avg_ent_f] = \
+                    (cluster_averages[cls.id][avg_ent_f] + cls.entropy) / 2
                 cluster_averages[cls.id][avg_runt_f] = \
                     (cluster_averages[cls.id][avg_runt_f] + cls.running_time_ms) / 2
     return cluster_averages
 
+
+def calculate_entropy_for_cluster(results: List[List[models.InputClustering]]):
+    from math import log2
+    for result in results:
+        for cls in result:
+            entropies_and_weights = []
+            total = 0
+            for cl in cls.clusters:
+                items = cl.categories
+                weight = sum(items.values())
+                es = 0.0
+                for i in items.values():
+                    if i != 0:
+                        e = i / weight * log2(i / weight)
+                        es += e
+                entropies_and_weights.append((es, weight))
+                total += weight
+            relative_entropies = []
+            for (entropy, weight) in entropies_and_weights:
+                relative_entropies.append(entropy * (weight / total))
+            cls.entropy = sum(relative_entropies)
 
 def write_cluster_averages(averages, ws: Worksheet, start_row, target_col):
     row_cursor = start_row
@@ -101,12 +126,19 @@ def write_cluster_result_stats(fd: FormattingData, cl: models.InputClustering, w
     first_cell = ws.cell(row=row_cursor, column=col_cursor, value="silhouette")
     formatting.add_border_to_row(ws, first_cell.row, Direction.TOP, formatting.borders.BORDER_DASHED)
     ws.cell(row=row_cursor, column=col_cursor + 1, value=round(cl.silhouette, 4))
+
     row_cursor += 1
     ws.cell(row=row_cursor, column=col_cursor, value="org. silhouette (sample)")
     ws.cell(row=row_cursor, column=col_cursor + 1, value=round(cl.original_silhouette, 4))
+
     row_cursor += 1
     ws.cell(row=row_cursor, column=col_cursor, value="purity score")
     ws.cell(row=row_cursor, column=col_cursor + 1, value=round(cl.purity_score, 4))
+
+    row_cursor += 1
+    ws.cell(row=row_cursor, column=col_cursor, value="entropy")
+    ws.cell(row=row_cursor, column=col_cursor + 1, value=round(cl.entropy, 4))
+
     row_cursor += 1
     ws.cell(row=row_cursor, column=col_cursor, value="running time (ms)")
     ws.cell(row=row_cursor, column=col_cursor + 1, value=round(cl.running_time_ms, 4))
