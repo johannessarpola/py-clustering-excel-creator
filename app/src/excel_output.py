@@ -11,7 +11,7 @@ from app.src import models
 
 
 def extract_category_titles_from_cluster(cl):
-    category_titles = set(cl.clusters[0].categories)
+    category_titles = sorted(set(cl.clusters[0].categories))
     return category_titles
 
 
@@ -37,10 +37,15 @@ def multiple_results_to_excels(base_fd: FormattingData, results, filename=None):
     """
     wb = Workbook()
     ws = wb.create_sheet("Result", 0)
+    cluster_averages = get_cluster_averages(results)
     col_cursor = base_fd.start_column
-    for result in results:
+    len_results = len(results)
+    for i, result in enumerate(results):
         fd = FormattingData(col_cursor, base_fd.start_row, base_fd.padding)
-        (cc, rc) = add_results_to_excel(fd, result, ws)
+        if i + 1 == len_results:
+            (cc, rc) = add_results_to_excel(fd, result, ws, cluster_averages)
+        else:
+            (cc, rc) = add_results_to_excel(fd, result, ws)
         col_cursor = cc  # This just increases to column by 4 for each iteration
 
     par_dir = os.path.dirname(filename)
@@ -51,10 +56,47 @@ def multiple_results_to_excels(base_fd: FormattingData, results, filename=None):
     return wb.save(f"results.xlsx")
 
 
-def write_cluster_result_stats(fd: FormattingData, cl: models.InputClustering, ws: Worksheet, row_cursor):
+def get_cluster_averages(results: List[List[models.InputClustering]]):
+    cluster_averages = {}
+    avg_sil_f, avg_org_f, avg_pur_f, avg_runt_f = \
+        "avg. silhouette", "avg. org. silhouette (sample)", "avg. purity score", "avg. running time (ms)"
+    for result in results:
+        for cls in result:
+            if cls.id not in cluster_averages:
+                cluster_averages[cls.id] = {
+                    avg_sil_f: cls.silhouette,
+                    avg_org_f: cls.original_silhouette,
+                    avg_pur_f: cls.purity_score,
+                    avg_runt_f: cls.running_time_ms
+                }
+            else:
+                cluster_averages[cls.id][avg_sil_f] = \
+                    (cluster_averages[cls.id][avg_sil_f] + cls.silhouette) / 2
+                cluster_averages[cls.id][avg_org_f] = \
+                    (cluster_averages[cls.id][avg_org_f] + cls.original_silhouette) / 2
+                cluster_averages[cls.id][avg_pur_f] = \
+                    (cluster_averages[cls.id][avg_pur_f] + cls.purity_score) / 2
+                cluster_averages[cls.id][avg_runt_f] = \
+                    (cluster_averages[cls.id][avg_runt_f] + cls.running_time_ms) / 2
+    return cluster_averages
+
+
+def write_cluster_averages(averages, ws: Worksheet, start_row, target_col):
+    row_cursor = start_row
+    row_cursor += 1
+    for (k, v) in averages.items():
+        name_cell = ws.cell(row=row_cursor, column=target_col, value=k)
+        formatting.set_column_width(ws, name_cell.column, 20)
+        ws.cell(row=row_cursor, column=target_col + 1, value=round(v, 4))
+        row_cursor += 1
+    return row_cursor
+
+
+def write_cluster_result_stats(fd: FormattingData, cl: models.InputClustering, ws: Worksheet, start_row):
     # Write stats
     # Reset column cursor
     col_cursor = fd.start_column
+    row_cursor = start_row
     row_cursor += 1
     first_cell = ws.cell(row=row_cursor, column=col_cursor, value="silhouette")
     formatting.add_border_to_row(ws, first_cell.row, Direction.TOP, formatting.borders.BORDER_DASHED)
@@ -64,10 +106,10 @@ def write_cluster_result_stats(fd: FormattingData, cl: models.InputClustering, w
     ws.cell(row=row_cursor, column=col_cursor + 1, value=round(cl.original_silhouette, 4))
     row_cursor += 1
     ws.cell(row=row_cursor, column=col_cursor, value="purity score")
-    ws.cell(row=row_cursor, column=col_cursor + 1, value=round(cl.purity_score, 3))
+    ws.cell(row=row_cursor, column=col_cursor + 1, value=round(cl.purity_score, 4))
     row_cursor += 1
-    ws.cell(row=row_cursor, column=col_cursor, value="running_time (ms)")
-    ws.cell(row=row_cursor, column=col_cursor + 1, value=round(cl.running_time_ms, 2))
+    ws.cell(row=row_cursor, column=col_cursor, value="running time (ms)")
+    ws.cell(row=row_cursor, column=col_cursor + 1, value=round(cl.running_time_ms, 4))
 
     return row_cursor + 1
 
@@ -83,7 +125,8 @@ def write_cluster_labels(cl: models.InputClustering, ws: Worksheet, row_start, t
 
 def add_results_to_excel(fd: FormattingData,
                          cls: List[models.InputClustering],
-                         ws: Worksheet):
+                         ws: Worksheet,
+                         cluster_averages=None):
     """
     Appends results to workbook with current time as suffix
     :param fd:
@@ -141,8 +184,13 @@ def add_results_to_excel(fd: FormattingData,
             header_pass = False
 
         # Write stats
+        stat_cursor = row_cursor # Just to store this for averages
         row_cursor = write_cluster_result_stats(fd, cl, ws, row_cursor)
+        if cluster_averages is not None:
+            write_cluster_averages(cluster_averages[cl.id], ws, stat_cursor, fd.start_column + len(category_titles) + 1)
+            print(cluster_averages[cl.id])
         row_cursor += fd.padding
+
     col_cursor += len(category_titles)
 
     # Set some basic formatting
@@ -152,4 +200,5 @@ def add_results_to_excel(fd: FormattingData,
         formatting.set_column_width(ws, c, 15)
         if c == c[-1:]:
             formatting.add_thin_border_to_column(ws, title_column, Direction.RIGHT)
+
     return col_cursor, row_cursor
