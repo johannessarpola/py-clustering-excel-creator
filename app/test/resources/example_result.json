@@ -1,127 +1,37 @@
 [
     {
-        "id": "WikipediaTitles",
-        "clusters": [
-            {
-                "id": "[0]",
-                "categories": {
-                    "Grocery_and_Gourmet_Food_5-15k.txt": 1,
-                    "Beauty_5-15K.txt": 0,
-                    "Pet_Supplies_5-15k.txt": 0
-                }
-            },
-            {
-                "id": "[1]",
-                "categories": {
-                    "Pet_Supplies_5-15k.txt": 3479,
-                    "Grocery_and_Gourmet_Food_5-15k.txt": 4865,
-                    "Beauty_5-15K.txt": 4105
-                }
-            },
-            {
-                "id": "[2]",
-                "categories": {
-                    "Beauty_5-15K.txt": 10879,
-                    "Grocery_and_Gourmet_Food_5-15k.txt": 10119,
-                    "Pet_Supplies_5-15k.txt": 11491
-                }
-            }
-        ],
-        "silhouette": 0.059055247745134265,
-        "path_to_model": ""
-    },
-    {
-        "id": "TFIDF_WordNgram",
-        "clusters": [
-            {
-                "id": "[0]",
-                "categories": {
-                    "Pet_Supplies_5-15k.txt": 1839,
-                    "Grocery_and_Gourmet_Food_5-15k.txt": 2102,
-                    "Beauty_5-15K.txt": 2190
-                }
-            },
-            {
-                "id": "[1]",
-                "categories": {
-                    "Beauty_5-15K.txt": 10809,
-                    "Grocery_and_Gourmet_Food_5-15k.txt": 10103,
-                    "Pet_Supplies_5-15k.txt": 11367
-                }
-            },
-            {
-                "id": "[2]",
-                "categories": {
-                    "Pet_Supplies_5-15k.txt": 1764,
-                    "Grocery_and_Gourmet_Food_5-15k.txt": 2780,
-                    "Beauty_5-15K.txt": 1984
-                }
-            }
-        ],
-        "silhouette": 0.02011827517618766,
-        "path_to_model": ""
-    },
-    {
-        "id": "TFIDF_Combined",
-        "clusters": [
-            {
-                "id": "[0]",
-                "categories": {
-                    "Pet_Supplies_5-15k.txt": 2,
-                    "Beauty_5-15K.txt": 1,
-                    "Grocery_and_Gourmet_Food_5-15k.txt": 0
-                }
-            },
-            {
-                "id": "[1]",
-                "categories": {
-                    "Pet_Supplies_5-15k.txt": 2043,
-                    "Grocery_and_Gourmet_Food_5-15k.txt": 3219,
-                    "Beauty_5-15K.txt": 2448
-                }
-            },
-            {
-                "id": "[2]",
-                "categories": {
-                    "Beauty_5-15K.txt": 12534,
-                    "Grocery_and_Gourmet_Food_5-15k.txt": 11766,
-                    "Pet_Supplies_5-15k.txt": 12925
-                }
-            }
-        ],
-        "silhouette": 0.045346635353143566,
-        "path_to_model": ""
-    },
-    {
         "id": "TFIDF_KeywordsFirst",
         "clusters": [
             {
                 "id": "[0]",
                 "categories": {
-                    "Pet_Supplies_5-15k.txt": 3033,
-                    "Grocery_and_Gourmet_Food_5-15k.txt": 3981,
-                    "Beauty_5-15K.txt": 4153
+                    "Cell_Phones_and_Accessories_5-15K.txt": 39,
+                    "Sports_and_Outdoors_5-15K.txt": 1,
+                    "Books_5-15k.txt": 0
                 }
             },
             {
                 "id": "[1]",
                 "categories": {
-                    "Grocery_and_Gourmet_Food_5-15k.txt": 1,
-                    "Beauty_5-15K.txt": 0,
-                    "Pet_Supplies_5-15k.txt": 0
+                    "Cell_Phones_and_Accessories_5-15K.txt": 44,
+                    "Sports_and_Outdoors_5-15K.txt": 3,
+                    "Books_5-15k.txt": 0
                 }
             },
             {
                 "id": "[2]",
                 "categories": {
-                    "Beauty_5-15K.txt": 10830,
-                    "Grocery_and_Gourmet_Food_5-15k.txt": 11003,
-                    "Pet_Supplies_5-15k.txt": 11937
+                    "Sports_and_Outdoors_5-15K.txt": 484,
+                    "Books_5-15k.txt": 506,
+                    "Cell_Phones_and_Accessories_5-15K.txt": 423
                 }
             }
         ],
-        "silhouette": 0.10451790329253974,
-        "path_to_model": ""
+        "silhouette": 0.29071156533877496,
+        "original_silhouette": -0.02201644381823587,
+        "purity_score": 0.39266666666666666,
+        "path_to_model": "",
+        "running_time (ms)": 951457.46
     },
     {
         "id": "TFIDF_Keywords",
@@ -129,29 +39,134 @@
             {
                 "id": "[0]",
                 "categories": {
-                    "Pet_Supplies_5-15k.txt": 2069,
-                    "Grocery_and_Gourmet_Food_5-15k.txt": 2354,
-                    "Beauty_5-15K.txt": 2655
+                    "Cell_Phones_and_Accessories_5-15K.txt": 438,
+                    "Sports_and_Outdoors_5-15K.txt": 497,
+                    "Books_5-15k.txt": 191
                 }
             },
             {
                 "id": "[1]",
                 "categories": {
-                    "Pet_Supplies_5-15k.txt": 1855,
-                    "Grocery_and_Gourmet_Food_5-15k.txt": 2954,
-                    "Beauty_5-15K.txt": 2061
+                    "Cell_Phones_and_Accessories_5-15K.txt": 58,
+                    "Sports_and_Outdoors_5-15K.txt": 2,
+                    "Books_5-15k.txt": 0
                 }
             },
             {
                 "id": "[2]",
                 "categories": {
-                    "Beauty_5-15K.txt": 10267,
-                    "Grocery_and_Gourmet_Food_5-15k.txt": 9677,
-                    "Pet_Supplies_5-15k.txt": 11046
+                    "Books_5-15k.txt": 314,
+                    "Cell_Phones_and_Accessories_5-15K.txt": 0,
+                    "Sports_and_Outdoors_5-15K.txt": 0
                 }
             }
         ],
-        "silhouette": 0.011225315534191267,
-        "path_to_model": ""
+        "silhouette": 0.16869316367303744,
+        "original_silhouette": -0.04663605082296316,
+        "purity_score": 0.5793333333333334,
+        "path_to_model": "",
+        "running_time (ms)": 853385.83
+    },
+    {
+        "id": "WikipediaTitles",
+        "clusters": [
+            {
+                "id": "[0]",
+                "categories": {
+                    "Sports_and_Outdoors_5-15K.txt": 11,
+                    "Cell_Phones_and_Accessories_5-15K.txt": 91,
+                    "Books_5-15k.txt": 0
+                }
+            },
+            {
+                "id": "[1]",
+                "categories": {
+                    "Sports_and_Outdoors_5-15K.txt": 481,
+                    "Books_5-15k.txt": 299,
+                    "Cell_Phones_and_Accessories_5-15K.txt": 419
+                }
+            },
+            {
+                "id": "[2]",
+                "categories": {
+                    "Books_5-15k.txt": 198,
+                    "Cell_Phones_and_Accessories_5-15K.txt": 1,
+                    "Sports_and_Outdoors_5-15K.txt": 0
+                }
+            }
+        ],
+        "silhouette": 0.30554277674345137,
+        "original_silhouette": -0.02481437087155555,
+        "purity_score": 0.5133333333333333,
+        "path_to_model": "",
+        "running_time (ms)": 1013036.44
+    },
+    {
+        "id": "TFIDF_Combined",
+        "clusters": [
+            {
+                "id": "[0]",
+                "categories": {
+                    "Books_5-15k.txt": 262,
+                    "Cell_Phones_and_Accessories_5-15K.txt": 310,
+                    "Sports_and_Outdoors_5-15K.txt": 514
+                }
+            },
+            {
+                "id": "[1]",
+                "categories": {
+                    "Books_5-15k.txt": 243,
+                    "Sports_and_Outdoors_5-15K.txt": 2,
+                    "Cell_Phones_and_Accessories_5-15K.txt": 0
+                }
+            },
+            {
+                "id": "[2]",
+                "categories": {
+                    "Cell_Phones_and_Accessories_5-15K.txt": 162,
+                    "Sports_and_Outdoors_5-15K.txt": 7,
+                    "Books_5-15k.txt": 0
+                }
+            }
+        ],
+        "silhouette": 0.025388080020816307,
+        "original_silhouette": -0.000463935927265661,
+        "purity_score": 0.6126666666666667,
+        "path_to_model": "",
+        "running_time (ms)": 1038157.08
+    },
+    {
+        "id": "TFIDF_WordNgram",
+        "clusters": [
+            {
+                "id": "[0]",
+                "categories": {
+                    "Cell_Phones_and_Accessories_5-15K.txt": 126,
+                    "Sports_and_Outdoors_5-15K.txt": 7,
+                    "Books_5-15k.txt": 0
+                }
+            },
+            {
+                "id": "[1]",
+                "categories": {
+                    "Cell_Phones_and_Accessories_5-15K.txt": 387,
+                    "Sports_and_Outdoors_5-15K.txt": 478,
+                    "Books_5-15k.txt": 279
+                }
+            },
+            {
+                "id": "[2]",
+                "categories": {
+                    "Books_5-15k.txt": 222,
+                    "Sports_and_Outdoors_5-15K.txt": 1,
+                    "Cell_Phones_and_Accessories_5-15K.txt": 0
+                }
+            }
+        ],
+        "silhouette": 0.07526644794363094,
+        "original_silhouette": -0.014777618214014836,
+        "purity_score": 0.5506666666666666,
+        "path_to_model": "",
+        "running_time (ms)": 1038238.15
     }
 ]
