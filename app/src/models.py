@@ -25,7 +25,10 @@ class InputClustering(Identified):
     clusters = []
     silhouette = 0.0
 
-    def __init__(self, id, clusters, silhouette):
+    def __init__(self, id, clusters, silhouette, original_silhouette, purity_score, running_time_ms):
         super().__init__(id)
         self.clusters = clusters
         self.silhouette = silhouette
+        self.original_silhouette = original_silhouette
+        self.purity_score = purity_score
+        self.running_time_ms = running_time_ms

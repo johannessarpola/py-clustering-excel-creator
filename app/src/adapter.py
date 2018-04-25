@@ -5,8 +5,11 @@ from typing import List
 def json_to_clustering_result(json) -> models.InputClustering:
     id = json["id"]
     silhouette = json["silhouette"]
+    original_silhoutte = json["original_silhouette"]
+    purity_score = json["purity_score"]
+    running_time_ms = json["running_time (ms)"]
     clusters = list(map(lambda e: json_to_cluster(e), json["clusters"]))
-    return models.InputClustering(id, clusters, silhouette)
+    return models.InputClustering(id, clusters, silhouette, original_silhoutte, purity_score, running_time_ms)
 
 
 def json_to_cluster(json) -> models.InputCluster:
